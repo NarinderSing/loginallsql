@@ -1,0 +1,36 @@
+<h1 class="text-center py-4">Registraion form</h1>
+<form [formGroup]="registrationForm" (ngSubmit)="formBtn()">
+    <div class="row">
+        <div class="col-md-6 py-2">
+            <label for="Name" class="form-label">Name</label>
+            <input type="name" class="form-control" placeholder="name" formControlName="name">
+            <span class="text-danger" *ngIf="(getFormValidation.name.touched || submitBtn) && getFormValidation.name.errors?.required"><small>*Name is not valid</small> </span>
+        </div>
+        <div class="col-md-6 py-2">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="email" formControlName="email">
+            <span class="text-danger" *ngIf="(getFormValidation.email.touched || submitBtn) && getFormValidation.email.errors?.required"><small>*Email is not valid</small> </span>
+
+        </div>
+
+        <div class="col-md-6 py-2">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="number" class="form-control" placeholder="phone"  formControlName="phone">
+            <span class="text-danger" *ngIf="(getFormValidation.phone.touched || submitBtn) && getFormValidation.phone.errors?.required"><small>*Not number is add</small> </span>
+
+        </div>
+        <div class="col-md-6 py-2">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="password"  formControlName="password">
+            <span class="text-danger" *ngIf="(getFormValidation.password.touched || submitBtn) && getFormValidation.password.errors?.required"><small>*password is not valid</small> </span>
+
+        </div>
+        <div class="col-md-6 py-2">
+            <label for="confirmPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="confirmPassword" placeholder=" Confirm Password"  formControlName="confirmPassword">
+            <span class="text-danger" *ngIf="(getFormValidation.confirmPassword.touched || submitBtn) && getFormValidation.confirmPassword.errors?.required"><small>*valid</small> </span>
+        </div>
+    </div>
+    <button class="btn btn-primary my-5" type="submit"> Submit</button>
+
+</form>

@@ -1,0 +1,16 @@
+<p>home works!</p>
+<div class="container">
+    <div *ngFor="let user of userData">
+        <h2>{{user.user_name}}</h2>
+        <h2>{{user.email}}</h2>
+    </div>
+    <form [formGroup]='studendForm' (ngSubmit)="formBtn()" >
+        <label >Name</label>
+        <input type="text" name="name"formControlName='name' id="name" placeholder="Name"> <br>
+        
+        <label >email</label>
+        <input type="text" name="email" id="email" formControlName='email' placeholder="email"> <br>
+<button type="submit"> submit button</button>
+
+    </form>
+</div>
